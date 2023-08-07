@@ -27,6 +27,8 @@ for (data in listOfObjects) {
 }
 
 const variables = () => {
+  //Resources https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ https://www.freecodecamp.org/news/javascript-let-and-const-hoisting/
+
   // Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
 
   // 1. The var statement declares a function-scoped or globally-scoped variable, optionally initializing it to a value.
@@ -102,3 +104,53 @@ const variables = () => {
   // They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized
 };
 variables();
+
+const dataTypes = () => {
+  // Resources :https://www.freecodecamp.org/news/javascript-type-checking-how-to-check-type-in-js-with-typeof/
+  // Primitive data types are numbers, strings, booleans, null, and undefined
+  // Reference data types are arrays, functions, collections, and all other types of objects
+
+  //example way of checking type of
+  typeof expression;
+  // Or
+  typeof value;
+
+  console.log(typeof typeof 45); // returns "string"
+
+  //The above returns a string because the output of typeof 45 is evaluated as "number" (which is returned as a string), then the output of typeof("number") is evaluated as "string
+
+  // Using expression
+  console.log(typeof (123 - 4567 - 890)); // returns "number"
+
+  // Using single value
+  console.log(typeof 123 - 4567 - 890); // returns NaN
+
+  //The single value method will return NaN (Not a Number) because it will first evaluate typeof 123, which will return a string, "number". This means you are now left with "number" - 4567-890, which cannot be subtracted and will return NaN
+
+  console.log(typeof 33); // returns "number"
+  console.log(typeof -23); // returns "number"
+  console.log(typeof 0); // returns "number"
+  console.log(typeof 1.2345); // returns "number"
+  console.log(typeof Infinity); // returns "number"
+
+  console.log(typeof NaN); // returns "number"
+  console.log(typeof Math.LOG2E); // returns "number"
+
+  // Typecasting value to number
+  console.log(typeof Number(`123`)); // returns "number"
+
+  // Value cannot be typecasted to integer
+  console.log(typeof Number(`freeCodeCamp`)); // returns "number"
+  console.log(typeof parseInt(`123`)); // returns "number"
+  console.log(typeof parseFloat(`123.456`)); // returns "number"
+  console.log(typeof ''); // returns "string"
+  console.log(typeof 'freeCodeCamp'); // returns "string"
+  console.log(typeof 'freeCodeCamp offers the best free resources'); // returns "string"
+  console.log(typeof '123'); // returns "string"
+  console.log(typeof String(123)); // returns "string"
+  console.log(typeof true); // returns "boolean"
+  console.log(typeof false); // returns "boolean"
+  console.log(typeof Boolean(0)); // returns "boolean"
+  console.log(typeof !!0); // returns "boolean"
+};
+dataTypes();
